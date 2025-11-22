@@ -1,0 +1,17 @@
+[
+    [
+        "name" : "MyConcatDefinitions",
+        "displayName" : "MyConcatDefinitions",
+        "category" : "myconcatworkitem",
+        "description" : "",
+        "defaultHandler": "mvel: new org.acme.MyConcatWorkItemHandler()",
+        "parameters" : [
+            "FirstName" : new StringDataType(),
+            "LastName" : new StringDataType()
+        ],
+        "results" : [
+            "FullName" : new StringDataType()
+        ],
+        "icon" : "4345800.png"
+    ]
+]
