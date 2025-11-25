@@ -3,7 +3,7 @@
         "name" : "MyConcatDefinitions",
         "displayName" : "MyConcatDefinitions",
         "category" : "myconcatworkitem",
-        "description" : "",
+        "description" : "My Concat Definitions",
         "defaultHandler": "mvel: new org.acme.MyConcatWorkItemHandler()",
         "parameters" : [
             "FirstName" : new StringDataType(),
