@@ -51,7 +51,8 @@
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_baseSalaryInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_approveOutputXItem" structureRef="Boolean" />
-  <bpmn2:itemDefinition id="_3BB111CC-D279-4832-9476-8E852415A204" structureRef="org.kie.kogito.hr" />
+  <bpmn2:itemDefinition id="_3BB111CC-D279-4832-9476-8E852415A204" structureRef="org.kie.kogito.hr.User" />
+  <bpmn2:message id="_673A3847-1589-487F-BFB1-9BD5AC5F11A6" itemRef="Type" name="UserMessage" />
   <bpmn2:process id="hiring" drools:packageName="org.kie.kogito.hr" drools:version="1.0" drools:adHoc="false" name="hiring" isExecutable="true" processType="Public">
     <bpmn2:documentation id="_55220AD7-C222-402D-A8CB-8AA7A145F873">Process to hire new candidates</bpmn2:documentation>
     <bpmn2:extensionElements>
@@ -316,22 +317,22 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmn2:incoming>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:incoming>
       <bpmn2:incoming>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_C874D216-5CDA-4F5A-9624-2BF6C624E2BA">
-        <bpmn2:dataInput id="_07CB0BEF-239F-4E2D-B945-E94259DAF344" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataOutput name="User" id="_D50A49C4-C75D-4528-A0A0-126137CB84F3" drools:dtype="org.acme.User" itemSubjectRef="_1E870506-31EC-4D5B-B50E-0480522B5DA8" />
-        <bpmn2:inputSet id="_3F265602-CC96-4E96-96A7-067677170D4A">
-          <bpmn2:dataInputRefs>_07CB0BEF-239F-4E2D-B945-E94259DAF344</bpmn2:dataInputRefs>
+      <bpmn2:ioSpecification id="_272CA44F-4A5A-4C9F-92DA-8E54EE1983EA">
+        <bpmn2:dataInput id="_A80FD943-5B67-462A-A5B4-30CCFF115BAA" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="User" id="_BD44D0C4-37AC-4F70-A53D-2A35F7C49E8D" drools:dtype="org.kie.kogito.hr" itemSubjectRef="_3BB111CC-D279-4832-9476-8E852415A204" />
+        <bpmn2:inputSet id="_9554793D-92C7-4C32-BC9D-9E5105666BBE">
+          <bpmn2:dataInputRefs>_A80FD943-5B67-462A-A5B4-30CCFF115BAA</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_1DBB742E-C530-45D9-B8CF-E65408F0A4BD">
-          <bpmn2:dataOutputRefs>_D50A49C4-C75D-4528-A0A0-126137CB84F3</bpmn2:dataOutputRefs>
+        <bpmn2:outputSet id="_DBFD4AED-5472-49FD-BBD7-EEEA447CE048">
+          <bpmn2:dataOutputRefs>_BD44D0C4-37AC-4F70-A53D-2A35F7C49E8D</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_90C42239-35DA-4902-8CA7-D86F84717696">
+      <bpmn2:dataInputAssociation id="_65C6FACE-9053-450E-8535-543FB6367064">
         <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
-        <bpmn2:targetRef>_07CB0BEF-239F-4E2D-B945-E94259DAF344</bpmn2:targetRef>
+        <bpmn2:targetRef>_A80FD943-5B67-462A-A5B4-30CCFF115BAA</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_96981890-36FF-437B-8CD0-2705F9BACF53">
-        <bpmn2:sourceRef>_D50A49C4-C75D-4528-A0A0-126137CB84F3</bpmn2:sourceRef>
+      <bpmn2:dataOutputAssociation id="_83FD8520-F7B0-40A0-934E-0AEE6E0B7C51">
+        <bpmn2:sourceRef>_BD44D0C4-37AC-4F70-A53D-2A35F7C49E8D</bpmn2:sourceRef>
         <bpmn2:targetRef>_F69DE10C-C5AB-428F-9FB1-F16B55CF173D</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
