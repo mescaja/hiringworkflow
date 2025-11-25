@@ -144,12 +144,7 @@
       <artifactId>quarkus-smallrye-health</artifactId>
     </dependency>
 
-    <!-- Testing -->
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-kubernetes</artifactId>
-    </dependency>
-    
+
     <!-- BAMOE Testing -->
     <dependency>
       <groupId>io.quarkus</groupId>
