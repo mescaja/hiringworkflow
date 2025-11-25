@@ -1,4 +1,4 @@
-package org.kie.kogito.hr;
+package org.acme;
 
 import org.kie.kogito.process.impl.DefaultWorkItemHandlerConfig;
 import jakarta.enterprise.context.ApplicationScoped;

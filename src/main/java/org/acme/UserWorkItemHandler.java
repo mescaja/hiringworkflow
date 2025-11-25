@@ -1,9 +1,11 @@
-package org.kie.kogito.hr;
+package org.acme;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import org.acme.quarkus.User;
+import org.acme.service.UserService;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItem;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItemHandler;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItemManager;

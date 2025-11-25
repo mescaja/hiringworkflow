@@ -4,12 +4,12 @@
         "displayName" : "Get User By Name",
         "category" : "Custom Tasks",
         "description" : "Get User By Name Rest Service",
-        "defaultHandler": "mvel: new org.kie.kogito.hr.UserWorkItemHandler()",
+        "defaultHandler": "mvel: new org.acme.UserWorkItemHandler()",
         "parameters" : [
             "UserName" : new StringDataType()
         ],
         "results" : [
-            "User" : new org.kie.kogito.hr.User()
+            "User" : new org.acme.User()
         ],
         "icon" : "4345800.png"
     ]
