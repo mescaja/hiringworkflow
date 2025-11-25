@@ -1,0 +1,16 @@
+[
+    [
+        "name" : "GetUserByName",
+        "displayName" : "Get User By Name",
+        "category" : "Custom Tasks",
+        "description" : "Get User By Name Rest Service",
+        "defaultHandler": "mvel: new org.acme.travels.workitems.UserWorkItemHandler()",
+        "parameters" : [
+            "UserName" : new StringDataType()
+        ],
+        "results" : [
+            "User" : new org.acme.travels.quarkus.User()
+        ],
+        "icon" : "4345800.png"
+    ]
+]

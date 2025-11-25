@@ -529,7 +529,7 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <dc:Bounds height="102" width="154" x="824" y="12.000000000000057" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" bpmnElement="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045">
-        <dc:Bounds height="102" width="154" x="80" y="-200" />
+        <dc:Bounds height="102" width="154" x="120" y="-200" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__834B21EF-9229-44F8-A5DB-D96EBB39A347" bpmnElement="_834B21EF-9229-44F8-A5DB-D96EBB39A347">
         <dc:Bounds height="102" width="154" x="746" y="288.00000000000006" />
@@ -538,7 +538,7 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <dc:Bounds height="56" width="56" x="1032" y="35" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" bpmnElement="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
-        <dc:Bounds height="56" width="56" x="340" y="60" />
+        <dc:Bounds height="56" width="56" x="340" y="40" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__30C8C01B-4149-4AE5-8D86-D27D57BCA8E7" bpmnElement="_30C8C01B-4149-4AE5-8D86-D27D57BCA8E7">
         <dc:Bounds height="56" width="56" x="1032" y="392.00000000000006" />
@@ -573,7 +573,7 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__1639F738-45F3-4CD6-A80E-CCEBAA605D56_to_shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" bpmnElement="_8863B46B-9B0F-40B9-AAB1-A7503CF9AA0A">
         <di:waypoint x="188" y="-304" />
-        <di:waypoint x="157" y="-149" />
+        <di:waypoint x="197" y="-149" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__57DBE42C-6850-4A08-AC73-2BB0FFDFCC8C_to_shape__B8C4F63C-81AD-4291-9C1B-84967277EEF6" bpmnElement="_ACEE7578-B7D2-4EDF-B104-9ECF3DD8A383">
         <di:waypoint x="514" y="63.00000000000006" />
@@ -604,12 +604,12 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <di:waypoint x="1134" y="63.00000000000006" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04_to_shape__30C8C01B-4149-4AE5-8D86-D27D57BCA8E7" bpmnElement="_C6E61C53-FD35-4347-B69E-30AA93AE4404">
-        <di:waypoint x="368" y="116" />
+        <di:waypoint x="368" y="96" />
         <di:waypoint x="371.75" y="420.00000811728415" />
         <di:waypoint x="1060" y="420.00000000000006" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04_to_shape__57DBE42C-6850-4A08-AC73-2BB0FFDFCC8C" bpmnElement="_59F9A0E6-7F9C-43A9-8920-5B40A91169E6">
-        <di:waypoint x="368" y="88" />
+        <di:waypoint x="368" y="68" />
         <di:waypoint x="514" y="63.00000000000006" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__30C8C01B-4149-4AE5-8D86-D27D57BCA8E7_to_shape__4B7FF147-F096-435B-8CAF-48318EF786B0" bpmnElement="_94172225-E124-4F14-98DA-C3D62C11254A">
@@ -629,12 +629,12 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <di:waypoint x="823" y="196" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_E64F5F66-C2C9-4BDC-8312-0FCAB14B6C07" bpmnElement="_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C" sourceElement="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetElement="_162C48EE-73AD-4F54-A376-4860DBC3E914">
-        <di:waypoint x="157" y="-149" />
+        <di:waypoint x="197" y="-149" />
         <di:waypoint x="210" y="20" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_61DD8CFC-3624-4BEB-8F83-257E9FB74BFE" bpmnElement="_07A14A6A-1B8F-4CF2-B6EF-0F250275AFF5" sourceElement="_162C48EE-73AD-4F54-A376-4860DBC3E914" targetElement="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
         <di:waypoint x="210" y="70" />
-        <di:waypoint x="340" y="88" />
+        <di:waypoint x="340" y="68" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
