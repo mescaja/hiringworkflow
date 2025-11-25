@@ -51,7 +51,7 @@
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_baseSalaryInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_approveOutputXItem" structureRef="Boolean" />
-  <bpmn2:itemDefinition id="_1ABBE453-0943-4162-A756-AB82E67E6DC9" structureRef="org.acme.travels.quarkus.User" />
+  <bpmn2:itemDefinition id="_C4532E58-38DB-47E9-A444-814E2C81D476" structureRef="org.acme.travels.quarkus.User" />
   <bpmn2:process id="hiring" drools:packageName="org.kie.kogito.hr" drools:version="1.0" drools:adHoc="false" name="hiring" isExecutable="true" processType="Public">
     <bpmn2:documentation id="_55220AD7-C222-402D-A8CB-8AA7A145F873">Process to hire new candidates</bpmn2:documentation>
     <bpmn2:extensionElements>
@@ -122,14 +122,7 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="_5BA02DE1-64CE-4A72-BF33-7EDE521BF978" name="testConcat" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem">
-      <bpmn2:extensionElements>
-        <drools:metaData name="customTags">
-          <drools:metaValue>output</drools:metaValue>
-        </drools:metaData>
-      </bpmn2:extensionElements>
-    </bpmn2:property>
-    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_1ABBE453-0943-4162-A756-AB82E67E6DC9">
+    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_C4532E58-38DB-47E9-A444-814E2C81D476">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
           <drools:metaValue>output</drools:metaValue>
@@ -262,6 +255,7 @@ System.out.println(&quot;###################################&quot;);
       <bpmn2:outgoing>_E90C1619-D5EA-4BE1-8E93-C61589E3F699</bpmn2:outgoing>
       <bpmn2:outgoing>_CE5868B4-86D2-4D84-A0F1-2F2F36865048</bpmn2:outgoing>
       <bpmn2:outgoing>_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C</bpmn2:outgoing>
+      <bpmn2:outgoing>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:outgoing>
       <bpmn2:script>System.out.println(&quot;New Hiring has been created for candidate: &quot; + candidate);
 
 kcontext.setVariable(&quot;hr_approval&quot;, false);
@@ -309,48 +303,19 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C" sourceRef="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetRef="_50D0555B-333C-457E-B417-6D7EB07252C9" />
-    <bpmn2:sequenceFlow id="_DF557883-4218-4EAD-B8D3-57E55D1B7674" sourceRef="_50D0555B-333C-457E-B417-6D7EB07252C9" targetRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" />
     <bpmn2:sequenceFlow id="_48901FD9-8430-4286-AC27-8B2A3CA0F4C9" sourceRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" targetRef="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" />
+    <bpmn2:sequenceFlow id="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceRef="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" />
     <bpmn2:startEvent id="_1639F738-45F3-4CD6-A80E-CCEBAA605D56" name="StartEvent">
       <bpmn2:outgoing>_8863B46B-9B0F-40B9-AAB1-A7503CF9AA0A</bpmn2:outgoing>
     </bpmn2:startEvent>
-    <bpmn2:task id="_50D0555B-333C-457E-B417-6D7EB07252C9" drools:taskName="MyConcatDefinitions" name="MyConcatDefinitions">
+    <bpmn2:task id="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" drools:taskName="GetUserByName" name="Get User By Name">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue>TestConcat</drools:metaValue>
+          <drools:metaValue>GetUserByName</drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C</bpmn2:incoming>
-      <bpmn2:outgoing>_07A14A6A-1B8F-4CF2-B6EF-0F250275AFF5</bpmn2:outgoing>
-      <bpmn2:outgoing>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_62ECAD09-D336-4F6B-9A5A-A1413C076D58">
-        <bpmn2:dataInput id="_71C02E51-6BEB-434A-83E4-BB8E012F71B5" name="FirstName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataInput id="_7949344E-B633-44D3-86B6-8542DE3F60BB" name="LastName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataOutput name="FullName" id="_AF455F4E-EB07-49EB-9207-88117548D0F9" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:inputSet id="_C4BEF272-E132-4380-AAA6-C68235BE4D4F">
-          <bpmn2:dataInputRefs>_71C02E51-6BEB-434A-83E4-BB8E012F71B5</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>_7949344E-B633-44D3-86B6-8542DE3F60BB</bpmn2:dataInputRefs>
-        </bpmn2:inputSet>
-        <bpmn2:outputSet id="_B4A9765B-60C5-4C23-802A-C27CF2C9EC46">
-          <bpmn2:dataOutputRefs>_AF455F4E-EB07-49EB-9207-88117548D0F9</bpmn2:dataOutputRefs>
-        </bpmn2:outputSet>
-      </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_03DB7615-FA5A-440D-BD8E-F20E166D7F33">
-        <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
-        <bpmn2:targetRef>_71C02E51-6BEB-434A-83E4-BB8E012F71B5</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_6E2AC3B6-30E7-41DE-9F96-9C52CE80A35B">
-        <bpmn2:sourceRef>skills</bpmn2:sourceRef>
-        <bpmn2:targetRef>_7949344E-B633-44D3-86B6-8542DE3F60BB</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_6108ACB4-AE08-455A-B3C8-B0C02E2A7BFB">
-        <bpmn2:sourceRef>_AF455F4E-EB07-49EB-9207-88117548D0F9</bpmn2:sourceRef>
-        <bpmn2:targetRef>_5BA02DE1-64CE-4A72-BF33-7EDE521BF978</bpmn2:targetRef>
-      </bpmn2:dataOutputAssociation>
-    </bpmn2:task>
-    <bpmn2:task id="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" drools:taskName="GetUserByName" name="Get User By Name">
       <bpmn2:incoming>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:incoming>
+      <bpmn2:incoming>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
       <bpmn2:ioSpecification id="_505C9DCF-C552-464D-AFFF-D9B89FD0863B">
         <bpmn2:dataInput id="_D0A255A7-837F-44C4-A58F-2F36F0458CF3" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
@@ -588,9 +553,6 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmndi:BPMNShape id="shape__F1B20FAB-EDDC-4114-8AE8-B00E3F94975E" bpmnElement="_F1B20FAB-EDDC-4114-8AE8-B00E3F94975E">
         <dc:Bounds height="56" width="56" x="795" y="196" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_162C48EE-73AD-4F54-A376-4860DBC3E914" bpmnElement="_50D0555B-333C-457E-B417-6D7EB07252C9">
-        <dc:Bounds x="60" y="-120" width="180" height="100" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" bpmnElement="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066">
         <dc:Bounds x="60" y="20" width="180" height="100" />
       </bpmndi:BPMNShape>
@@ -655,17 +617,13 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <di:waypoint x="928" y="113" />
         <di:waypoint x="823" y="196" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="_E64F5F66-C2C9-4BDC-8312-0FCAB14B6C07" bpmnElement="_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C" sourceElement="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetElement="_162C48EE-73AD-4F54-A376-4860DBC3E914">
-        <di:waypoint x="137" y="-209" />
-        <di:waypoint x="150" y="-120" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="_2683C468-B129-49D1-BB4E-B5711505F307" bpmnElement="_DF557883-4218-4EAD-B8D3-57E55D1B7674" sourceElement="_162C48EE-73AD-4F54-A376-4860DBC3E914" targetElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4">
-        <di:waypoint x="150" y="-70" />
-        <di:waypoint x="150" y="20" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_291180F9-D338-4D7A-A398-ED35ED4B20E1" bpmnElement="_48901FD9-8430-4286-AC27-8B2A3CA0F4C9" sourceElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" targetElement="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
         <di:waypoint x="150" y="70" />
         <di:waypoint x="340" y="68" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_DDE226B5-64E9-42FB-B54F-74CA002E2FC2" bpmnElement="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceElement="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4">
+        <di:waypoint x="137" y="-209" />
+        <di:waypoint x="150" y="20" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
