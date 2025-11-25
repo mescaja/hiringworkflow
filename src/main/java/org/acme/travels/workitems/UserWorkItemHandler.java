@@ -31,6 +31,8 @@ public class UserWorkItemHandler extends DefaultKogitoWorkItemHandler {
         UserService userService = new UserService();
         User user = userService.get(userName);
 
+        LOG.info("User {} is being processed", user.toString());
+
         results.put("User", user);
 
         return Optional.of(handler.completeTransition(workItem.getPhaseStatus(), results));
