@@ -51,7 +51,7 @@
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_baseSalaryInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_approveOutputXItem" structureRef="Boolean" />
-  <bpmn2:itemDefinition id="_C4532E58-38DB-47E9-A444-814E2C81D476" structureRef="org.acme.travels.quarkus.User" />
+  <bpmn2:itemDefinition id="_3BB111CC-D279-4832-9476-8E852415A204" structureRef="org.kie.kogito.hr" />
   <bpmn2:process id="hiring" drools:packageName="org.kie.kogito.hr" drools:version="1.0" drools:adHoc="false" name="hiring" isExecutable="true" processType="Public">
     <bpmn2:documentation id="_55220AD7-C222-402D-A8CB-8AA7A145F873">Process to hire new candidates</bpmn2:documentation>
     <bpmn2:extensionElements>
@@ -122,7 +122,7 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_C4532E58-38DB-47E9-A444-814E2C81D476">
+    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_3BB111CC-D279-4832-9476-8E852415A204">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
           <drools:metaValue>output</drools:metaValue>
@@ -316,22 +316,22 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmn2:incoming>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:incoming>
       <bpmn2:incoming>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_505C9DCF-C552-464D-AFFF-D9B89FD0863B">
-        <bpmn2:dataInput id="_D0A255A7-837F-44C4-A58F-2F36F0458CF3" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataOutput name="User" id="_98341D85-A577-4736-B6BD-F98D93AE6BB9" drools:dtype="org.acme.travels.quarkus.User" itemSubjectRef="_1ABBE453-0943-4162-A756-AB82E67E6DC9" />
-        <bpmn2:inputSet id="_E252AAC4-1030-4030-9F3A-A9E193B55BB6">
-          <bpmn2:dataInputRefs>_D0A255A7-837F-44C4-A58F-2F36F0458CF3</bpmn2:dataInputRefs>
+      <bpmn2:ioSpecification id="_C874D216-5CDA-4F5A-9624-2BF6C624E2BA">
+        <bpmn2:dataInput id="_07CB0BEF-239F-4E2D-B945-E94259DAF344" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="User" id="_D50A49C4-C75D-4528-A0A0-126137CB84F3" drools:dtype="org.acme.User" itemSubjectRef="_1E870506-31EC-4D5B-B50E-0480522B5DA8" />
+        <bpmn2:inputSet id="_3F265602-CC96-4E96-96A7-067677170D4A">
+          <bpmn2:dataInputRefs>_07CB0BEF-239F-4E2D-B945-E94259DAF344</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_D56C0E35-2EC3-4CF2-95CF-CFE988644482">
-          <bpmn2:dataOutputRefs>_98341D85-A577-4736-B6BD-F98D93AE6BB9</bpmn2:dataOutputRefs>
+        <bpmn2:outputSet id="_1DBB742E-C530-45D9-B8CF-E65408F0A4BD">
+          <bpmn2:dataOutputRefs>_D50A49C4-C75D-4528-A0A0-126137CB84F3</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_9C16DAD9-DCE9-466D-9EF3-F4639F337F33">
+      <bpmn2:dataInputAssociation id="_90C42239-35DA-4902-8CA7-D86F84717696">
         <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
-        <bpmn2:targetRef>_D0A255A7-837F-44C4-A58F-2F36F0458CF3</bpmn2:targetRef>
+        <bpmn2:targetRef>_07CB0BEF-239F-4E2D-B945-E94259DAF344</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_E076B993-47D1-4E62-93DC-BAFCFB05E9F6">
-        <bpmn2:sourceRef>_98341D85-A577-4736-B6BD-F98D93AE6BB9</bpmn2:sourceRef>
+      <bpmn2:dataOutputAssociation id="_96981890-36FF-437B-8CD0-2705F9BACF53">
+        <bpmn2:sourceRef>_D50A49C4-C75D-4528-A0A0-126137CB84F3</bpmn2:sourceRef>
         <bpmn2:targetRef>_F69DE10C-C5AB-428F-9FB1-F16B55CF173D</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>

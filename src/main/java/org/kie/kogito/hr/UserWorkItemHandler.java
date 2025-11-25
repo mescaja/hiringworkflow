@@ -1,4 +1,4 @@
-package org.acme.travels.workitems;
+package org.kie.kogito.hr;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,9 +10,6 @@ import org.kie.kogito.internal.process.workitem.KogitoWorkItemManager;
 import org.kie.kogito.internal.process.workitem.WorkItemTransition;
 import org.kie.kogito.process.workitems.impl.DefaultKogitoWorkItemHandler;
 import org.slf4j.LoggerFactory;
-
-import org.acme.travels.quarkus.User;
-import org.acme.travels.services.UserService;
 
 public class UserWorkItemHandler extends DefaultKogitoWorkItemHandler {
 

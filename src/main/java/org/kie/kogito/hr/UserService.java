@@ -16,22 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.acme.travels.rest;
+package org.kie.kogito.hr;
 
-import org.acme.travels.quarkus.User;
-import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import org.eclipse.microprofile.faulttolerance.Fallback;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
-@Path("/v2")
-@RegisterRestClient
-public interface UsersRemoteService {
+@ApplicationScoped
+public class UserService {
 
-    @GET
-    @Path("/user/{username}")
-    @Produces("application/json")
-    User get(@PathParam("username") String username);
+    @Inject
+    @RestClient
+    UsersRemoteService usersRemoteService;
+
+    @Fallback(fallbackMethod = "missingUser")
+    public User get(String username) {
+        return usersRemoteService.get(username);
+    }
+
+    public User missingUser(String username) {
+        return null;
+    }
 }

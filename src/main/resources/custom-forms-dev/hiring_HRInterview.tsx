@@ -66,25 +66,25 @@ const Form__hiring_HRInterview: React.FC<any> = (props: any) => {
 	}, []);
 	return (
 		<div className={'pf-v5-c-form'}>
-			<FormGroup fieldId='uniforms-0002-0001'>
+			<FormGroup fieldId='uniforms-0004-0001'>
 				<Checkbox
 					isChecked={approve}
 					isDisabled={false}
-					id={'uniforms-0002-0001'}
+					id={'uniforms-0004-0001'}
 					name={'approve'}
 					label={'Approve'}
 					onChange={(e, newValue) => set__approve(newValue)}
 				/>
 			</FormGroup>
 			<FormGroup
-				fieldId={'uniforms-0002-0003'}
+				fieldId={'uniforms-0004-0003'}
 				label={'Base salary'}
 				isRequired={false}>
 				<TextInput
 					type={'number'}
 					name={'baseSalary'}
 					isDisabled={false}
-					id={'uniforms-0002-0003'}
+					id={'uniforms-0004-0003'}
 					placeholder={''}
 					step={1}
 					value={baseSalary}
@@ -92,14 +92,14 @@ const Form__hiring_HRInterview: React.FC<any> = (props: any) => {
 				/>
 			</FormGroup>
 			<FormGroup
-				fieldId={'uniforms-0002-0005'}
+				fieldId={'uniforms-0004-0005'}
 				label={'Bonus'}
 				isRequired={false}>
 				<TextInput
 					type={'number'}
 					name={'bonus'}
 					isDisabled={false}
-					id={'uniforms-0002-0005'}
+					id={'uniforms-0004-0005'}
 					placeholder={''}
 					step={1}
 					value={bonus}
@@ -107,12 +107,12 @@ const Form__hiring_HRInterview: React.FC<any> = (props: any) => {
 				/>
 			</FormGroup>
 			<FormGroup
-				fieldId={'uniforms-0002-0006'}
+				fieldId={'uniforms-0004-0006'}
 				label={'Candidate'}
 				isRequired={false}>
 				<TextInput
 					name={'candidate'}
-					id={'uniforms-0002-0006'}
+					id={'uniforms-0004-0006'}
 					isDisabled={true}
 					placeholder={''}
 					type={'text'}
@@ -121,12 +121,12 @@ const Form__hiring_HRInterview: React.FC<any> = (props: any) => {
 				/>
 			</FormGroup>
 			<FormGroup
-				fieldId={'uniforms-0002-0007'}
+				fieldId={'uniforms-0004-0007'}
 				label={'Category'}
 				isRequired={false}>
 				<TextInput
 					name={'category'}
-					id={'uniforms-0002-0007'}
+					id={'uniforms-0004-0007'}
 					isDisabled={false}
 					placeholder={''}
 					type={'text'}

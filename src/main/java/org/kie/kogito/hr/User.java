@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.acme.travels.quarkus;
+package org.kie.kogito.hr;
 
 public class User {
 
