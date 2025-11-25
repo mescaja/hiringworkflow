@@ -9,7 +9,7 @@
             "UserName" : new StringDataType()
         ],
         "results" : [
-            "User" : new org.acme.User()
+            "User" : new org.acme.quarkus.User()
         ],
         "icon" : "4345800.png"
     ]
