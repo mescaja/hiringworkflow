@@ -52,6 +52,7 @@
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" structureRef="Integer" />
   <bpmn2:itemDefinition id="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_approveOutputXItem" structureRef="Boolean" />
   <bpmn2:itemDefinition id="_2F6DB8E2-5CCC-48D0-960D-30C0EB454DA6" structureRef="org.acme.rest.client.Extension" />
+  <bpmn2:itemDefinition id="_2C4058EC-276F-4FEF-BF44-6BE58E242496" structureRef="org.acme.travels.User" />
   <bpmn2:process id="hiring" drools:packageName="org.kie.kogito.hr" drools:version="1.0" drools:adHoc="false" name="hiring" isExecutable="true" processType="Public">
     <bpmn2:documentation id="_55220AD7-C222-402D-A8CB-8AA7A145F873">Process to hire new candidates</bpmn2:documentation>
     <bpmn2:extensionElements>
@@ -122,7 +123,7 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
-    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_2F6DB8E2-5CCC-48D0-960D-30C0EB454DA6">
+    <bpmn2:property id="_F69DE10C-C5AB-428F-9FB1-F16B55CF173D" name="user" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496">
       <bpmn2:extensionElements>
         <drools:metaData name="customTags">
           <drools:metaValue>output</drools:metaValue>
@@ -316,22 +317,22 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmn2:incoming>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:incoming>
       <bpmn2:incoming>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_72BF7279-B320-459A-A37A-1C644EE07728">
-        <bpmn2:dataInput id="_7316B081-9755-45DE-87C0-A857B86C89A7" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataOutput name="User" id="_A57AC21C-3AD2-49D1-AA0F-43A8D44D848E" drools:dtype="org.acme.rest.client.Extension" itemSubjectRef="_2F6DB8E2-5CCC-48D0-960D-30C0EB454DA6" />
-        <bpmn2:inputSet id="_5109AF22-694B-423A-A270-AC588AAF7AB5">
-          <bpmn2:dataInputRefs>_7316B081-9755-45DE-87C0-A857B86C89A7</bpmn2:dataInputRefs>
+      <bpmn2:ioSpecification id="_9A6D360F-ED58-4494-9460-148CD41A04B3">
+        <bpmn2:dataInput id="_986D50C7-7B7E-46F4-A59D-850D03CA3A66" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="User" id="_2E43CC32-728A-4AA8-AC17-E597123F4DE7" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
+        <bpmn2:inputSet id="_93E589FE-F4A2-4F8F-83CF-0880EDA3FB1F">
+          <bpmn2:dataInputRefs>_986D50C7-7B7E-46F4-A59D-850D03CA3A66</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_B47D565B-9BE1-4424-8B02-DD32CBC6425C">
-          <bpmn2:dataOutputRefs>_A57AC21C-3AD2-49D1-AA0F-43A8D44D848E</bpmn2:dataOutputRefs>
+        <bpmn2:outputSet id="_44B8B373-68BD-4B5C-94D4-86A8C4757C06">
+          <bpmn2:dataOutputRefs>_2E43CC32-728A-4AA8-AC17-E597123F4DE7</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_444CA879-A8EF-4FCE-BFD7-3E3E6E02181D">
+      <bpmn2:dataInputAssociation id="_8ABB477F-9BBB-4AED-A9BE-756EBE58E745">
         <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
-        <bpmn2:targetRef>_7316B081-9755-45DE-87C0-A857B86C89A7</bpmn2:targetRef>
+        <bpmn2:targetRef>_986D50C7-7B7E-46F4-A59D-850D03CA3A66</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_CA858FF6-860B-403D-8902-36135CF33EB1">
-        <bpmn2:sourceRef>_A57AC21C-3AD2-49D1-AA0F-43A8D44D848E</bpmn2:sourceRef>
+      <bpmn2:dataOutputAssociation id="_0ADC484A-114C-4632-A478-D2A94A26C12B">
+        <bpmn2:sourceRef>_2E43CC32-728A-4AA8-AC17-E597123F4DE7</bpmn2:sourceRef>
         <bpmn2:targetRef>_F69DE10C-C5AB-428F-9FB1-F16B55CF173D</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>

@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import org.acme.rest.client.Extension;
-import org.acme.rest.client.ExtensionsResource;
+import org.acme.travels.User;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItem;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItemHandler;
 import org.kie.kogito.internal.process.workitem.KogitoWorkItemManager;
@@ -28,10 +27,12 @@ public class UserWorkItemHandler extends DefaultKogitoWorkItemHandler {
 
         String userName = (String) workItem.getParameter("UserName");
         LOG.info("UserName: " + userName);
-        ExtensionsResource userService = new ExtensionsResource();
-        Extension user = userService.id(userName);
+        //ExtensionsResource userService = new ExtensionsResource();
+        //Extension user = userService.id(userName);
 
-        LOG.info("User {} is being processed", user.toString());
+        User user = new User(1, userName, null, null, null, null, null, 0);
+
+        LOG.info("User {} is being processed", user.getUsername());
 
         results.put("User", user);
 
