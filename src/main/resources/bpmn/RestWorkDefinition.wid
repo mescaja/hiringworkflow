@@ -1,6 +1,9 @@
 [
   [
     "name" : "Rest",
+    "displayName" : "Call Rest",
+    "category" : "Custom Tasks",
+    "description" : "Calling Rest Endpoint",
     "parameters" : [
         "Url" : new StringDataType(),
         "ContentData" : new ObjectDataType(),
