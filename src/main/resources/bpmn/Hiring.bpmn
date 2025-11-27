@@ -137,6 +137,14 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
+    <bpmn2:property id="_95EC859F-89BB-4671-9D8E-8E00C634B8E6" name="user3" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue>output</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
+    <bpmn2:property id="_F61D43EF-5033-4FFD-AE53-6E46390F5918" name="username" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
     <bpmn2:boundaryEvent id="_116F3C54-A10E-4952-9E08-1CACE74CED0B" attachedToRef="_B8C4F63C-81AD-4291-9C1B-84967277EEF6">
       <bpmn2:timerEventDefinition>
         <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression">PT1800S</bpmn2:timeDuration>
@@ -311,9 +319,37 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1" sourceRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" targetRef="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" />
     <bpmn2:sequenceFlow id="_836819ED-CB87-4211-A437-8D29D9FEE6A8" sourceRef="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" targetRef="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" />
     <bpmn2:sequenceFlow id="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceRef="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" />
+    <bpmn2:sequenceFlow id="_ACA45D8A-6DA5-4F4E-8F41-4F4595A73D7C" sourceRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" targetRef="_CE33ED15-F3D8-41F9-B966-7E6C5CDBD07F" />
+    <bpmn2:sequenceFlow id="_57F5A783-9C8A-4255-9B31-290C68354035" sourceRef="_CE33ED15-F3D8-41F9-B966-7E6C5CDBD07F" targetRef="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" />
+    <bpmn2:serviceTask id="_CE33ED15-F3D8-41F9-B966-7E6C5CDBD07F" name="Call Remote Rest" implementation="Java" drools:serviceimplementation="Java" drools:serviceinterface="org.acme.travels.rest.UserServiceRemote" drools:serviceoperation="getUserByName">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue>Find remote user</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_ACA45D8A-6DA5-4F4E-8F41-4F4595A73D7C</bpmn2:incoming>
+      <bpmn2:outgoing>_57F5A783-9C8A-4255-9B31-290C68354035</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_C4A0EF20-4145-4845-B7CB-B0D381711E32">
+        <bpmn2:dataInput id="_8840FBDA-DC05-457B-8A8B-B0894C278B54" name="Parameter" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="Result" id="_4F621683-08DB-4C30-91BD-0C7BD483851B" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
+        <bpmn2:inputSet id="_4DAC17A8-B596-4F40-9A28-9B9814B4066B">
+          <bpmn2:dataInputRefs>_8840FBDA-DC05-457B-8A8B-B0894C278B54</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_D9B165FC-1D6B-4BCA-B538-E390B6E46977">
+          <bpmn2:dataOutputRefs>_4F621683-08DB-4C30-91BD-0C7BD483851B</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_A330FAB8-1BC5-4E29-884D-9DA76BAB2348">
+        <bpmn2:sourceRef>_F61D43EF-5033-4FFD-AE53-6E46390F5918</bpmn2:sourceRef>
+        <bpmn2:targetRef>_8840FBDA-DC05-457B-8A8B-B0894C278B54</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="_A7D4FB04-6530-4529-84FF-09304A42CC25">
+        <bpmn2:sourceRef>_4F621683-08DB-4C30-91BD-0C7BD483851B</bpmn2:sourceRef>
+        <bpmn2:targetRef>_95EC859F-89BB-4671-9D8E-8E00C634B8E6</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
     <bpmn2:startEvent id="_1639F738-45F3-4CD6-A80E-CCEBAA605D56" name="StartEvent">
       <bpmn2:outgoing>_8863B46B-9B0F-40B9-AAB1-A7503CF9AA0A</bpmn2:outgoing>
     </bpmn2:startEvent>
@@ -328,6 +364,8 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmn2:incoming>_3CC9940B-A5D6-46C1-88B4-59E2B0BF3597</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
       <bpmn2:outgoing>_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1</bpmn2:outgoing>
+      <bpmn2:outgoing>_690A02EE-7BEE-4EF8-9613-61CEE445346C</bpmn2:outgoing>
+      <bpmn2:outgoing>_ACA45D8A-6DA5-4F4E-8F41-4F4595A73D7C</bpmn2:outgoing>
       <bpmn2:ioSpecification id="_9A6D360F-ED58-4494-9460-148CD41A04B3">
         <bpmn2:dataInput id="_986D50C7-7B7E-46F4-A59D-850D03CA3A66" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
         <bpmn2:dataOutput name="User" id="_2E43CC32-728A-4AA8-AC17-E597123F4DE7" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
@@ -349,6 +387,8 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
     </bpmn2:task>
     <bpmn2:task id="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" drools:taskName="Rest" name="Call Rest">
       <bpmn2:incoming>_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1</bpmn2:incoming>
+      <bpmn2:incoming>_1132671B-800D-4902-A19F-ED01592D5764</bpmn2:incoming>
+      <bpmn2:incoming>_57F5A783-9C8A-4255-9B31-290C68354035</bpmn2:incoming>
       <bpmn2:outgoing>_836819ED-CB87-4211-A437-8D29D9FEE6A8</bpmn2:outgoing>
       <bpmn2:ioSpecification id="_E8618753-93DB-4F9A-B637-956BC0E49EA0">
         <bpmn2:dataInput id="_60DADA41-2C54-4A7B-A900-B4C55101C209" name="Url" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
@@ -610,6 +650,9 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmndi:BPMNShape id="_59447C60-E862-4B66-B339-1F7E7AA98932" bpmnElement="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5">
         <dc:Bounds x="120" y="20" width="180" height="100" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_680D51C3-5D66-42B1-B779-C3F572BDBFA7" bpmnElement="_CE33ED15-F3D8-41F9-B966-7E6C5CDBD07F">
+        <dc:Bounds x="120" y="-140" width="180" height="100" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__116F3C54-A10E-4952-9E08-1CACE74CED0B_to_shape__F1B20FAB-EDDC-4114-8AE8-B00E3F94975E" bpmnElement="_7B41F971-C74D-4036-8A5E-EFF81C37986A">
         <di:waypoint x="728" y="113" />
         <di:waypoint x="823" y="196" />
@@ -671,10 +714,6 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <di:waypoint x="928" y="113" />
         <di:waypoint x="823" y="196" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="_040545B1-316A-4AA9-8919-0AA47E5CEDCC" bpmnElement="_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1" sourceElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" targetElement="_59447C60-E862-4B66-B339-1F7E7AA98932">
-        <di:waypoint x="210" y="-230" />
-        <di:waypoint x="210" y="20" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_197A8651-F041-4358-8E88-F590F61C1033" bpmnElement="_836819ED-CB87-4211-A437-8D29D9FEE6A8" sourceElement="_59447C60-E862-4B66-B339-1F7E7AA98932" targetElement="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
         <di:waypoint x="210" y="70" />
         <di:waypoint x="340" y="68" />
@@ -682,6 +721,14 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmndi:BPMNEdge id="_DDE226B5-64E9-42FB-B54F-74CA002E2FC2" bpmnElement="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceElement="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4">
         <di:waypoint x="677" y="-229" />
         <di:waypoint x="300" y="-230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_3F07B474-A633-4AE7-82D0-DC489C0C9F65" bpmnElement="_ACA45D8A-6DA5-4F4E-8F41-4F4595A73D7C" sourceElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" targetElement="_680D51C3-5D66-42B1-B779-C3F572BDBFA7">
+        <di:waypoint x="210" y="-230" />
+        <di:waypoint x="210" y="-140" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_0FD51F62-F26D-4109-8C7F-378E3F98D0A9" bpmnElement="_57F5A783-9C8A-4255-9B31-290C68354035" sourceElement="_680D51C3-5D66-42B1-B779-C3F572BDBFA7" targetElement="_59447C60-E862-4B66-B339-1F7E7AA98932">
+        <di:waypoint x="210" y="-90" />
+        <di:waypoint x="210" y="20" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
