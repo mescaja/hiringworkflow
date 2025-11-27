@@ -130,6 +130,13 @@
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:property>
+    <bpmn2:property id="_994FCBD1-7B4F-4164-BA9F-D7D2B078F1EA" name="user2" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496">
+      <bpmn2:extensionElements>
+        <drools:metaData name="customTags">
+          <drools:metaValue>output</drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:property>
     <bpmn2:boundaryEvent id="_116F3C54-A10E-4952-9E08-1CACE74CED0B" attachedToRef="_B8C4F63C-81AD-4291-9C1B-84967277EEF6">
       <bpmn2:timerEventDefinition>
         <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression">PT1800S</bpmn2:timeDuration>
@@ -157,8 +164,9 @@
       <bpmn2:incoming>_C6E61C53-FD35-4347-B69E-30AA93AE4404</bpmn2:incoming>
       <bpmn2:outgoing>_94172225-E124-4F14-98DA-C3D62C11254A</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:exclusiveGateway id="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" drools:dg="_59F9A0E6-7F9C-43A9-8920-5B40A91169E6" gatewayDirection="Diverging" default="_59F9A0E6-7F9C-43A9-8920-5B40A91169E6">
+    <bpmn2:exclusiveGateway id="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" drools:dg="_59F9A0E6-7F9C-43A9-8920-5B40A91169E6" gatewayDirection="Unspecified" default="_59F9A0E6-7F9C-43A9-8920-5B40A91169E6">
       <bpmn2:incoming>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:incoming>
+      <bpmn2:incoming>_836819ED-CB87-4211-A437-8D29D9FEE6A8</bpmn2:incoming>
       <bpmn2:outgoing>_C6E61C53-FD35-4347-B69E-30AA93AE4404</bpmn2:outgoing>
       <bpmn2:outgoing>_59F9A0E6-7F9C-43A9-8920-5B40A91169E6</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
@@ -256,6 +264,7 @@ System.out.println(&quot;###################################&quot;);
       <bpmn2:outgoing>_CE5868B4-86D2-4D84-A0F1-2F2F36865048</bpmn2:outgoing>
       <bpmn2:outgoing>_F5F555D8-0BE1-46CF-9E3F-D365FDCB1E4C</bpmn2:outgoing>
       <bpmn2:outgoing>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:outgoing>
+      <bpmn2:outgoing>_3CC9940B-A5D6-46C1-88B4-59E2B0BF3597</bpmn2:outgoing>
       <bpmn2:script>System.out.println(&quot;New Hiring has been created for candidate: &quot; + candidate);
 
 kcontext.setVariable(&quot;hr_approval&quot;, false);
@@ -303,7 +312,8 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         </drools:metaData>
       </bpmn2:extensionElements>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="_48901FD9-8430-4286-AC27-8B2A3CA0F4C9" sourceRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" targetRef="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" />
+    <bpmn2:sequenceFlow id="_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1" sourceRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" targetRef="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" />
+    <bpmn2:sequenceFlow id="_836819ED-CB87-4211-A437-8D29D9FEE6A8" sourceRef="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" targetRef="_A51A809E-03C0-4EA7-91F1-7B3C5E29AD04" />
     <bpmn2:sequenceFlow id="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceRef="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetRef="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066" />
     <bpmn2:startEvent id="_1639F738-45F3-4CD6-A80E-CCEBAA605D56" name="StartEvent">
       <bpmn2:outgoing>_8863B46B-9B0F-40B9-AAB1-A7503CF9AA0A</bpmn2:outgoing>
@@ -316,7 +326,9 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       </bpmn2:extensionElements>
       <bpmn2:incoming>_DF557883-4218-4EAD-B8D3-57E55D1B7674</bpmn2:incoming>
       <bpmn2:incoming>_4035CB66-FD19-49FE-AEFA-782A76132816</bpmn2:incoming>
+      <bpmn2:incoming>_3CC9940B-A5D6-46C1-88B4-59E2B0BF3597</bpmn2:incoming>
       <bpmn2:outgoing>_48901FD9-8430-4286-AC27-8B2A3CA0F4C9</bpmn2:outgoing>
+      <bpmn2:outgoing>_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1</bpmn2:outgoing>
       <bpmn2:ioSpecification id="_9A6D360F-ED58-4494-9460-148CD41A04B3">
         <bpmn2:dataInput id="_986D50C7-7B7E-46F4-A59D-850D03CA3A66" name="UserName" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
         <bpmn2:dataOutput name="User" id="_2E43CC32-728A-4AA8-AC17-E597123F4DE7" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
@@ -334,6 +346,46 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
       <bpmn2:dataOutputAssociation id="_0ADC484A-114C-4632-A478-D2A94A26C12B">
         <bpmn2:sourceRef>_2E43CC32-728A-4AA8-AC17-E597123F4DE7</bpmn2:sourceRef>
         <bpmn2:targetRef>_F69DE10C-C5AB-428F-9FB1-F16B55CF173D</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:task>
+    <bpmn2:task id="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" drools:taskName="Rest" name="Call Rest">
+      <bpmn2:incoming>_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1</bpmn2:incoming>
+      <bpmn2:outgoing>_836819ED-CB87-4211-A437-8D29D9FEE6A8</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_297A2853-4715-4CB1-8908-F1217154B2BE">
+        <bpmn2:dataInput id="_0D04E88F-5C34-4FFB-B340-F1816AD74B38" name="Url" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataInput id="_FD071805-3E17-4841-AFBC-716558AA3E3C" name="Port" drools:dtype="Integer" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" />
+        <bpmn2:dataInput id="_6E75EB3B-792D-4655-A5B2-612ADFAE8654" name="Username" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="Result" id="_BB227327-2E7B-4055-B94C-8A7401B48666" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
+        <bpmn2:inputSet id="_1981599C-F6E1-449E-A776-284A1B486A67">
+          <bpmn2:dataInputRefs>_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_6E75EB3B-792D-4655-A5B2-612ADFAE8654</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_AE35D4C4-E6E4-4402-97B6-316DED432EE5">
+          <bpmn2:dataOutputRefs>_BB227327-2E7B-4055-B94C-8A7401B48666</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_9167B627-7D67-4F7E-A890-69F07E04C9E7">
+        <bpmn2:targetRef>_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:targetRef>
+        <bpmn2:assignment id="_4E3E1473-894B-4FA4-8EA6-27193EF4F16D">
+          <bpmn2:from id="_7833A286-28D8-49C6-87C3-01952896D8F8" xsi:type="tFormalExpression">/v2/user/{username}</bpmn2:from>
+          <bpmn2:to id="_B1226A11-3BDD-4DF0-AE90-3D4DA9FA3BD1">_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_D8833309-1FB9-42E3-9206-12FBF2E765CA">
+        <bpmn2:targetRef>_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:targetRef>
+        <bpmn2:assignment id="_6EAA1DA4-E493-49FC-A897-6F7066ABD479">
+          <bpmn2:from id="_7E20511C-FC28-4098-A047-9BE01ED3C696" xsi:type="tFormalExpression">8080</bpmn2:from>
+          <bpmn2:to id="_C2FAAADF-B87A-49B5-A04B-1D078665037A">_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="_DAF72338-443C-4DEF-845E-D7F29674A471">
+        <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
+        <bpmn2:targetRef>_6E75EB3B-792D-4655-A5B2-612ADFAE8654</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="_5562F717-E0C0-4DEF-B62A-161B76127BF7">
+        <bpmn2:sourceRef>_BB227327-2E7B-4055-B94C-8A7401B48666</bpmn2:sourceRef>
+        <bpmn2:targetRef>_994FCBD1-7B4F-4164-BA9F-D7D2B078F1EA</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
     <bpmn2:userTask id="_8962C15F-55EC-46F7-B926-5D5A1FD8D35E" name="IT Interview">
@@ -509,7 +561,7 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <dc:Bounds height="56" width="56" x="700" y="85" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__1639F738-45F3-4CD6-A80E-CCEBAA605D56" bpmnElement="_1639F738-45F3-4CD6-A80E-CCEBAA605D56">
-        <dc:Bounds height="56" width="56" x="520" y="-280" />
+        <dc:Bounds height="56" width="56" x="940" y="-300" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__B8C4F63C-81AD-4291-9C1B-84967277EEF6" bpmnElement="_B8C4F63C-81AD-4291-9C1B-84967277EEF6">
         <dc:Bounds height="102" width="154" x="628" y="12.000000000000057" />
@@ -518,7 +570,7 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <dc:Bounds height="102" width="154" x="824" y="12.000000000000057" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" bpmnElement="_5BDBE48C-CC83-46A9-9D56-F846F8FC1045">
-        <dc:Bounds height="102" width="154" x="60" y="-260" />
+        <dc:Bounds height="102" width="154" x="600" y="-280" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape__834B21EF-9229-44F8-A5DB-D96EBB39A347" bpmnElement="_834B21EF-9229-44F8-A5DB-D96EBB39A347">
         <dc:Bounds height="102" width="154" x="746" y="288.00000000000006" />
@@ -554,15 +606,18 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <dc:Bounds height="56" width="56" x="795" y="196" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" bpmnElement="_6755F63A-ECC4-4CE1-B5F7-1B880B53E066">
-        <dc:Bounds x="60" y="20" width="180" height="100" />
+        <dc:Bounds x="120" y="-280" width="180" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_59447C60-E862-4B66-B339-1F7E7AA98932" bpmnElement="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5">
+        <dc:Bounds x="120" y="20" width="180" height="100" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="edge_shape__116F3C54-A10E-4952-9E08-1CACE74CED0B_to_shape__F1B20FAB-EDDC-4114-8AE8-B00E3F94975E" bpmnElement="_7B41F971-C74D-4036-8A5E-EFF81C37986A">
         <di:waypoint x="728" y="113" />
         <di:waypoint x="823" y="196" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__1639F738-45F3-4CD6-A80E-CCEBAA605D56_to_shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" bpmnElement="_8863B46B-9B0F-40B9-AAB1-A7503CF9AA0A">
-        <di:waypoint x="548" y="-224" />
-        <di:waypoint x="137" y="-209" />
+        <di:waypoint x="968" y="-244" />
+        <di:waypoint x="677" y="-229" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape__57DBE42C-6850-4A08-AC73-2BB0FFDFCC8C_to_shape__B8C4F63C-81AD-4291-9C1B-84967277EEF6" bpmnElement="_ACEE7578-B7D2-4EDF-B104-9ECF3DD8A383">
         <di:waypoint x="514" y="63.00000000000006" />
@@ -617,13 +672,17 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
         <di:waypoint x="928" y="113" />
         <di:waypoint x="823" y="196" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="_291180F9-D338-4D7A-A398-ED35ED4B20E1" bpmnElement="_48901FD9-8430-4286-AC27-8B2A3CA0F4C9" sourceElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" targetElement="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
-        <di:waypoint x="150" y="70" />
+      <bpmndi:BPMNEdge id="_040545B1-316A-4AA9-8919-0AA47E5CEDCC" bpmnElement="_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1" sourceElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4" targetElement="_59447C60-E862-4B66-B339-1F7E7AA98932">
+        <di:waypoint x="210" y="-230" />
+        <di:waypoint x="210" y="20" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_197A8651-F041-4358-8E88-F590F61C1033" bpmnElement="_836819ED-CB87-4211-A437-8D29D9FEE6A8" sourceElement="_59447C60-E862-4B66-B339-1F7E7AA98932" targetElement="shape__A51A809E-03C0-4EA7-91F1-7B3C5E29AD04">
+        <di:waypoint x="210" y="70" />
         <di:waypoint x="340" y="68" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="_DDE226B5-64E9-42FB-B54F-74CA002E2FC2" bpmnElement="_4035CB66-FD19-49FE-AEFA-782A76132816" sourceElement="shape__5BDBE48C-CC83-46A9-9D56-F846F8FC1045" targetElement="_47738A3B-F7A5-4CCB-9D42-A9B80E6395C4">
-        <di:waypoint x="137" y="-209" />
-        <di:waypoint x="150" y="20" />
+        <di:waypoint x="677" y="-229" />
+        <di:waypoint x="300" y="-230" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

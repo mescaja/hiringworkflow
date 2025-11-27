@@ -16,7 +16,6 @@
     "results" : [
         "Result" : new ObjectDataType(),
     ],
-    "displayName" : "REST",
-    "icon" : "defaultservicenodeicon.png"
+    "icon" : "4345800.png"
   ]
  ]
