@@ -1,0 +1,21 @@
+[
+  [
+    "name" : "Remote Rest",
+    "displayName" : "Call Remote Rest",
+    "category" : "Custom Tasks",
+    "description" : "Calling Remote Rest Endpoint",
+    "parameters" : [
+        "Url" : new StringDataType(),
+        "ContentData" : new ObjectDataType(),
+        "Method": new StringDataType,
+        "Host" : new StringDataType(),
+        "Port" : new IntegerDataType(),
+        "Username" : new StringDataType(),
+        "Password" : new StringDataType()
+    ],
+    "results" : [
+        "Result" : new ObjectDataType(),
+    ],
+    "icon" : "4345800.png"
+  ]
+ ]
