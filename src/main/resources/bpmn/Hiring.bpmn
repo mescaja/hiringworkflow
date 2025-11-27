@@ -350,40 +350,40 @@ kcontext.setVariable(&quot;it_approval&quot;, false);</bpmn2:script>
     <bpmn2:task id="_C9F30E44-EB26-44B1-A0A6-DBA9261F1CB5" drools:taskName="Rest" name="Call Rest">
       <bpmn2:incoming>_A0C117ED-88EB-46F5-ABC2-5552E40D5DB1</bpmn2:incoming>
       <bpmn2:outgoing>_836819ED-CB87-4211-A437-8D29D9FEE6A8</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_297A2853-4715-4CB1-8908-F1217154B2BE">
-        <bpmn2:dataInput id="_0D04E88F-5C34-4FFB-B340-F1816AD74B38" name="Url" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataInput id="_FD071805-3E17-4841-AFBC-716558AA3E3C" name="Port" drools:dtype="Integer" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" />
-        <bpmn2:dataInput id="_6E75EB3B-792D-4655-A5B2-612ADFAE8654" name="Username" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
-        <bpmn2:dataOutput name="Result" id="_BB227327-2E7B-4055-B94C-8A7401B48666" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
-        <bpmn2:inputSet id="_1981599C-F6E1-449E-A776-284A1B486A67">
-          <bpmn2:dataInputRefs>_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>_6E75EB3B-792D-4655-A5B2-612ADFAE8654</bpmn2:dataInputRefs>
+      <bpmn2:ioSpecification id="_09383320-D39F-4BB2-907F-4A67FC70A74A">
+        <bpmn2:dataInput id="_A1190F3C-4128-4071-89DB-94166D91BFB2" name="Url" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataInput id="_A6F88667-BCC8-48E2-8B9D-BCF909580D04" name="Port" drools:dtype="Integer" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_bonusInputXItem" />
+        <bpmn2:dataInput id="_8275108B-99DC-4D51-AB1D-FD4EBB19621B" name="username" drools:dtype="String" itemSubjectRef="__8962C15F-55EC-46F7-B926-5D5A1FD8D35E_categoryInputXItem" />
+        <bpmn2:dataOutput name="Result" id="_3F800B0E-A545-4C26-A4B4-216CF8005363" drools:dtype="org.acme.travels.User" itemSubjectRef="_2C4058EC-276F-4FEF-BF44-6BE58E242496" />
+        <bpmn2:inputSet id="_E725409C-5A2E-40DE-B42E-5543D1E15A04">
+          <bpmn2:dataInputRefs>_A1190F3C-4128-4071-89DB-94166D91BFB2</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_A6F88667-BCC8-48E2-8B9D-BCF909580D04</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_8275108B-99DC-4D51-AB1D-FD4EBB19621B</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_AE35D4C4-E6E4-4402-97B6-316DED432EE5">
-          <bpmn2:dataOutputRefs>_BB227327-2E7B-4055-B94C-8A7401B48666</bpmn2:dataOutputRefs>
+        <bpmn2:outputSet id="_EC70D6BF-8303-45C1-B022-9E142B140BFD">
+          <bpmn2:dataOutputRefs>_3F800B0E-A545-4C26-A4B4-216CF8005363</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_9167B627-7D67-4F7E-A890-69F07E04C9E7">
-        <bpmn2:targetRef>_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:targetRef>
-        <bpmn2:assignment id="_4E3E1473-894B-4FA4-8EA6-27193EF4F16D">
-          <bpmn2:from id="_7833A286-28D8-49C6-87C3-01952896D8F8" xsi:type="tFormalExpression">/v2/user/{username}</bpmn2:from>
-          <bpmn2:to id="_B1226A11-3BDD-4DF0-AE90-3D4DA9FA3BD1">_0D04E88F-5C34-4FFB-B340-F1816AD74B38</bpmn2:to>
+      <bpmn2:dataInputAssociation id="_224A7B45-6F93-47D3-B146-54BC547500C0">
+        <bpmn2:targetRef>_A1190F3C-4128-4071-89DB-94166D91BFB2</bpmn2:targetRef>
+        <bpmn2:assignment id="_EB30A3BB-ED27-4E03-AF37-4CBE02939F1F">
+          <bpmn2:from id="_56C3A7D1-7064-4E3C-B5C9-461071AEE460" xsi:type="tFormalExpression">/v2/user/{username}</bpmn2:from>
+          <bpmn2:to id="_56207FE1-EAF4-4FFC-ABEF-9C695B1B1742">_A1190F3C-4128-4071-89DB-94166D91BFB2</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_D8833309-1FB9-42E3-9206-12FBF2E765CA">
-        <bpmn2:targetRef>_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:targetRef>
-        <bpmn2:assignment id="_6EAA1DA4-E493-49FC-A897-6F7066ABD479">
-          <bpmn2:from id="_7E20511C-FC28-4098-A047-9BE01ED3C696" xsi:type="tFormalExpression">8080</bpmn2:from>
-          <bpmn2:to id="_C2FAAADF-B87A-49B5-A04B-1D078665037A">_FD071805-3E17-4841-AFBC-716558AA3E3C</bpmn2:to>
+      <bpmn2:dataInputAssociation id="_D10D1817-9827-47CF-9D31-3BB412D4056D">
+        <bpmn2:targetRef>_A6F88667-BCC8-48E2-8B9D-BCF909580D04</bpmn2:targetRef>
+        <bpmn2:assignment id="_B3D7EA64-57E8-4652-B8A7-38D77906A9AE">
+          <bpmn2:from id="_772FE9D5-9B7F-4EAF-9C34-4BA9B349F6BF" xsi:type="tFormalExpression">8080</bpmn2:from>
+          <bpmn2:to id="_B0F75A78-6CD7-4D1A-8C1C-A6E3578D4AE7">_A6F88667-BCC8-48E2-8B9D-BCF909580D04</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_DAF72338-443C-4DEF-845E-D7F29674A471">
+      <bpmn2:dataInputAssociation id="_DE183F99-EAF2-4B8D-AE27-E605CDD52E57">
         <bpmn2:sourceRef>candidate</bpmn2:sourceRef>
-        <bpmn2:targetRef>_6E75EB3B-792D-4655-A5B2-612ADFAE8654</bpmn2:targetRef>
+        <bpmn2:targetRef>_8275108B-99DC-4D51-AB1D-FD4EBB19621B</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_5562F717-E0C0-4DEF-B62A-161B76127BF7">
-        <bpmn2:sourceRef>_BB227327-2E7B-4055-B94C-8A7401B48666</bpmn2:sourceRef>
+      <bpmn2:dataOutputAssociation id="_6C5D72A6-6D9B-470D-965B-6A77C5E750D3">
+        <bpmn2:sourceRef>_3F800B0E-A545-4C26-A4B4-216CF8005363</bpmn2:sourceRef>
         <bpmn2:targetRef>_994FCBD1-7B4F-4164-BA9F-D7D2B078F1EA</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
